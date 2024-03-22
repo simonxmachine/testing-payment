@@ -1,23 +1,5 @@
 <?php foreach ($offer->get_prospect_form_fields() as $name => $field): ?>
 
- <?php if ($name != 'city'): ?>
-   <div class="form-row">
-     <div class="form-group col-md-12">
-       <label for="<?php echo $name; ?>">
-         <?php echo ($name == 'state') ? 'City / Town' : $field['label']; ?>
-       </label>
-
-       <?php 
-         // Check if it's the state field and modify the option value
-         if ($name == 'state'):
-           $field['options']["Select State"] = "Select City";
-         endif;
-         echo $offer->field_html($name, $field); 
-       ?>
-
-     </div>
-   </div>
- <?php endif; ?>
  
  
 <?php endforeach; ?> 
